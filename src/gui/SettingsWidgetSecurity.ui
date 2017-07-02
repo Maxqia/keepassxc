@@ -136,6 +136,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QCheckBox" name="keyFailClearCheckBox">
+        <property name="text">
+         <string>Clear Database Password after Invalid Key is entered</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>

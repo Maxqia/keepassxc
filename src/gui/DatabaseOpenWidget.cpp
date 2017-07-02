@@ -163,7 +163,8 @@ void DatabaseOpenWidget::openDatabase()
     else {
         m_ui->messageWidget->showMessage(tr("Unable to open the database.")
                                          .append("\n").append(reader.errorString()), MessageWidget::Error);
-        m_ui->editPassword->clear();
+        if (config()->get("security/keyfailclear").toBool())
+        	m_ui->editPassword->clear();
     }
 }
 

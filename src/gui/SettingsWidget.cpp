@@ -148,7 +148,7 @@ void SettingsWidget::loadSettings()
 
     m_secUi->passwordCleartextCheckBox->setChecked(config()->get("security/passwordscleartext").toBool());
     m_secUi->passwordRepeatCheckBox->setChecked(config()->get("security/passwordsrepeat").toBool());
-
+    m_secUi->keyFailClearCheckBox->setChecked(config()->get("security/keyfailclear").toBool());
 
     for (const ExtraPage& page: asConst(m_extraPages)) {
         page.loadSettings();
@@ -209,6 +209,7 @@ void SettingsWidget::saveSettings()
 
     config()->set("security/passwordscleartext", m_secUi->passwordCleartextCheckBox->isChecked());
     config()->set("security/passwordsrepeat", m_secUi->passwordRepeatCheckBox->isChecked());
+    config()->set("security/keyfailclear", m_secUi->keyFailClearCheckBox->isChecked());
 
     for (const ExtraPage& page: asConst(m_extraPages)) {
         page.saveSettings();
